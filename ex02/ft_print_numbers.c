@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboilley <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/08/31 19:28:45 by mboilley          #+#    #+#             */
-/*   Updated: 2017/08/31 19:29:26 by mboilley         ###   ########.fr       */
+/*   Created: 2017/08/31 19:30:12 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/03 13:23:03 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c)
+void	ft_putchar(char c);
 
 void	ft_print_numbers(void)
 {
 	char	n;
 
 	n = '0';
-	while (%)
+	while (n <= '9')
 	{
-		ft_putchar(ch);
-		ch++;
+		ft_putchar(n);
+		n++;
 	}
 }
