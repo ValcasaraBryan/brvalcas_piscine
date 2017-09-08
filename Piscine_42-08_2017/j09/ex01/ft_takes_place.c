@@ -3,37 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_takes_place.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mboilley <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 23:32:14 by mboilley          #+#    #+#             */
-/*   Updated: 2017/09/08 04:03:56 by mboilley         ###   ########.fr       */
+/*   Created: 2017/09/07 23:32:14 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/08 00:07:08 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_takes_place(int hour)
+int		ft_2412(int hour)
 {
-	int		h;
-
-h = hour;
-if (hour > 12)
-	h = hour % 12;
-if (hour == 0)
-	h = 12;
-printf("THE FOLLOWING TAKES PLACE BETWEEN ");
-if (hour < 11)
-	printf("%d.00 A.M. AND %d.00 A.M. \n", h, (h = 1) % 12);
-if (hour == 11)
-	printf("11.00 A.M. AND 12.00 P.M. \n");
-if (hour == 23)
-	printf("11.00 A.M. AND 12.00 P.M. \n");
-if (hour == 24)
-	printf("12.00 A.M. AND 1.00 A.M. \n");
-else
-	printf("%d. 00 P.M. AND %d. 00 P.M.\n", h, (h + 1) % 12);
+	return (hour % 12) == 0 ? 12 : (hour % 12);
 }
 
-int		main()
+void	ft_takes_place(int hour)
 {
-	ft_takes_place(18);
-	return (0);
+	int x;
+	int y;
+	char bat;
+	char out;
+	
+	x = ft_2412(hour);
+	y = ft_2412(hour + 1);
+	bat = ((hour) > 12) ? 'P' : 'A';
+	out = ((hour + 1)  % 25 > 12) ? 'P' : 'A';
+	write (1, "THE FOLLOWING TAKES PLACE BETWEEN ", 34);
+	printf ("%d.00 %c.M AND %d.00 %c.M.\n", hour, bat, y, out);
 }
