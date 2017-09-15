@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvalcasa <bvalcasa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 17:07:02 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/10 17:07:03 by bvalcasa         ###   ########.fr       */
+/*   Created: 2017/09/14 22:43:26 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/15 00:39:46 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_strlen(char *str_len)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int index;
+	int i;
+	char *swap;
 
-	index = 0;
-	while (str_len[index] != '\0')
+	i = 0;
+	while (src[i] != '\0')
 	{
-		index++;
+		swap = src;
+		dest = swap;
+		i++;
 	}
-	return (index);
+	return (dest);
+}
+
+int		main(void)
+{
+	printf("%s\n", ft_strcpy("salut","sa"));
+	return (0);
 }

@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putstr.c                                           :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/06 05:46:51 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/07 08:10:27 by bvalcasa         ###   ########.fr       */
+/*   Created: 2017/09/10 17:07:07 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/10 17:07:08 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
+void	ft_putchar(char c);
+
 void	ft_putstr(char *str)
 {
-	int n;
+	int		i;
 
-	n = 0;
-	while (str[n] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		ft_putchar(str[n]);
-		n++;
+		ft_putchar(str[i]);
+		i++;
 	}
 }

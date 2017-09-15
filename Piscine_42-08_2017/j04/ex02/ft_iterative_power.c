@@ -1,37 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 01:17:53 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/14 22:41:45 by bvalcasa         ###   ########.fr       */
+/*   Created: 2017/09/11 12:31:30 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/14 14:52:19 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
-{
-	int s;
-	int negative;
-	int result;
+#include <stdio.h>
 
-	s = 0;
-	negative = 0;
-	result = 0;
-	while ((str[s] >= 9 && str[s] <= 13) || str[s] == 32)
-		s++;
-	if (str[s] == '+' || str[s] == '-')
+int		ft_iterative_power(int nb, int power)
+{
+	int nbr;
+
+	nbr = nb;
+	if (nbr < 0 || power < 0)
+		return (0);
+	if (nbr == 1)
+		return (nb);
+	if (nbr == 0)
+		return (0);
+	while (power > 1)
 	{
-		if (str[s] == '-')
-			negative = 1;
-		s++;
+		nb = nb * nbr;
+		power--;
 	}
-	while (str[s] >= '0' && str[s] <= '9')
-	{
-		result = result * 10;
-		result += str[s] - '0';
-		s++;
-	}
-	return (negative == 1 ? -result : result);
+	return (nb);
+}
+
+int		main(void)
+{
+	printf("%d\n", ft_iterative_power(2, 31) - 1); //valeur max int
+	printf("%d\n", ft_iterative_power(2, 31)    ); //valeur min int
+	return (0);
 }

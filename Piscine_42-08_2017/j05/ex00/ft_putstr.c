@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvalcasa <bvalcasa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 17:07:02 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/10 17:07:03 by bvalcasa         ###   ########.fr       */
+/*   Created: 2017/09/13 17:55:02 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/14 19:16:08 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-int		ft_strlen(char *str_len)
+void	ft_putchar(char c)
 {
-	int index;
+	write(1, &c, 1);
+}
 
-	index = 0;
-	while (str_len[index] != '\0')
+void	ft_putstr(char *str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		index++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (index);
+}
+
+int		main(void)
+{
+	ft_putstr("91");
+	return (0);
 }

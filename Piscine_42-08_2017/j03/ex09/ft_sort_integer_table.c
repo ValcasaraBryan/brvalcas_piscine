@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_sort_integer_table.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 01:17:53 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/14 22:41:45 by bvalcasa         ###   ########.fr       */
+/*   Updated: 2017/09/11 17:30:55 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
-{
-	int s;
-	int negative;
-	int result;
+#include <stdio.h>
 
-	s = 0;
-	negative = 0;
-	result = 0;
-	while ((str[s] >= 9 && str[s] <= 13) || str[s] == 32)
-		s++;
-	if (str[s] == '+' || str[s] == '-')
+void	ft_sort_integer_table(int *tab, int size)
+{
+	int i;
+	int j;
+	int swap;
+
+	i = 0;
+	while (i < size)
 	{
-		if (str[s] == '-')
-			negative = 1;
-		s++;
+		j = 1;
+		while (j < size)
+		{
+			if (tab[j - 1] > tab[j])
+			{
+				swap = tab[j - 1];
+				tab[j - 1] = tab[j];
+				tab[j] = swap;
+			}
+			j++;
+		}
+		i++;
 	}
-	while (str[s] >= '0' && str[s] <= '9')
-	{
-		result = result * 10;
-		result += str[s] - '0';
-		s++;
-	}
-	return (negative == 1 ? -result : result);
 }

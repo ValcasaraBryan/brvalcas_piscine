@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bvalcasa <bvalcasa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 17:07:02 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/10 17:07:03 by bvalcasa         ###   ########.fr       */
+/*   Created: 2017/09/12 10:38:10 by bvalcasa          #+#    #+#             */
+/*   Updated: 2017/09/14 23:47:09 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int		ft_strlen(char *str_len)
+int		ft_is_prime(int nb)
 {
-	int index;
+	int	index;
 
-	index = 0;
-	while (str_len[index] != '\0')
+	index = 2;
+	if (nb < 0)
+		return (0);
+	if (nb == 1)
+		return (0);
+	while (index < nb)
 	{
+		if (nb % index == 0)
+			return (0);
 		index++;
 	}
-	return (index);
+	return (1);
+}
+
+int		main(void)
+{
+	printf("%d", ft_is_prime(1));
+	return (0);
 }
