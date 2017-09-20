@@ -6,7 +6,7 @@
 /*   By: bvalcasa <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 14:49:17 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/15 00:15:24 by bvalcasa         ###   ########.fr       */
+/*   Updated: 2017/09/19 18:17:40 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_recursive_power(int nb, int power)
 	int nbr;
 
 	nbr = nb;
-	if (nbr < 0 || power < 0)
+	if (power < 0)
 		return (0);
 	if (power == 1)
 		return (nb);
@@ -30,6 +30,6 @@ int		ft_recursive_power(int nb, int power)
 
 int		main(void)
 {
-	printf("%d", ft_recursive_power(2, 31) - 1);
+	printf("%d", ft_recursive_power(2, -31) - 1);
 	return (0);
 }

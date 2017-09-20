@@ -6,7 +6,7 @@
 /*   By: bvalcasa <bvalcasa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 14:34:39 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/15 15:20:50 by bvalcasa         ###   ########.fr       */
+/*   Updated: 2017/09/18 20:40:53 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,34 @@
 char	*ft_strstr(char *str, char *to_find)
 {
 	int i;
+	int j;
 
 	i = 0;
-	while (str['\0'])
+	if (to_find == '\0')
+		return (str);
+	if ((to_find[i] == '\0') && (str[i] == '\0'))
+		return (str);
+	if (str[i] == '\0')
+		return (NULL);
+	while (str[i] != '\0')
 	{
-		if (to_find[i] == str[i])
+		j = 0;
+		while (str[i + j] == to_find[j])
 		{
-			to_find = &str[i++];
-			return (to_find);
+			j++;
+			if (to_find[j] == '\0')
+				return (str + i);
 		}
 		i++;
 	}
-	return (NULL);
+	if (str[i + j] != to_find[j])
+		return (NULL);
+	return (str);
 }
 
 int		main(void)
 {
-	char str[] = " je mappelle Bryan Salut bj";
-	char to_find[] = "Salut";
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s\n", strstr(str, to_find));
+	printf("%s\n", ft_strstr("", ""));
+	printf("%s\n", strstr("", ""));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bvalcasa <bvalcasa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 10:38:10 by bvalcasa          #+#    #+#             */
-/*   Updated: 2017/09/14 23:47:09 by bvalcasa         ###   ########.fr       */
+/*   Updated: 2017/09/19 18:19:13 by bvalcasa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_is_prime(int nb)
 		return (0);
 	if (nb == 1)
 		return (0);
+	if (nb == 0)
+		return (0);
 	while (index < nb)
 	{
 		if (nb % index == 0)
@@ -32,6 +34,6 @@ int		ft_is_prime(int nb)
 
 int		main(void)
 {
-	printf("%d", ft_is_prime(1));
+	printf("%d", ft_is_prime(2));
 	return (0);
 }
