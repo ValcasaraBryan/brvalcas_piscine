@@ -1,8 +1,0 @@
-Credentials cache: API:0EEB7F9D-2798-4DEC-8E70-154A654BC9D3
-        Principal: bvalcasa@42.FR
-
-  Issued                Expires               Principal
-Aug 28 22:25:44 2017  Sep  4 22:25:44 2017  krbtgt/42.FR@42.FR
-Aug 28 22:25:46 2017  Sep  4 22:25:44 2017  ldap/ldap-proxy.42.fr@42.FR
-Aug 28 22:25:46 2017  Sep  4 22:25:44 2017  HTTP/student-storage-2.42.fr@42.FR
-Aug 28 22:33:47 2017  Sep  4 22:25:44 2017  host/vgs-fn1.42.fr@42.FR
